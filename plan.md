@@ -15,7 +15,6 @@ class Team
 class Stadium
  - name
  - location
- - DateTime, kick off time
 
 enum PlayType { Run, Pass, Punt, FieldGoal, Kickoff, Kneel, OnsideKick }
 
@@ -57,6 +56,8 @@ class Quarter
 class Game
  - Team, home team
  - Team, away team
+ - Stadium 
+ - DateTime, kick off time
  - Drive[], drive list
 
 ```
