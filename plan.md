@@ -7,6 +7,61 @@ Play Entity: The core unit of game progression. Each record includes:
  - Result: Yards gained, play type (Run/Pass/Penalty), and the outcome (Touchdown, First Down).
 
 ```
+Pseudo code
+
+class Team
+ - name
+
+class Stadium
+ - name
+ - location
+ - DateTime, kick off time
+
+enum PlayType { Run, Pass, Punt, FieldGoal, Kickoff, Kneel, OnsideKick }
+
+enum PlayOutcome { PassComplete, PassIncomplete, Touchdown, Interception, Fumble, MadeFieldGoal, MissedFieldGoal, Sacked, Safety, Penalty }
+
+class PlayPenalty
+ - description
+ - penalty yards
+ - bool, automatic first down
+ - bool, loss of down
+ - bool, during play
+
+class PlayResult
+ - int, Yards Gained
+ - PlayOutcome
+ - bool, is first down
+ - bool, is a score
+ - PlayPenalty
+ - TimeSpan, time taken
+ - bool, stopped clock
+ - ??? turn over?
+
+class Play
+ - Quarter
+ - Down
+ - int, yards to first down
+ - Team, possession team
+ - Play Type
+ - string, play name
+
+class Drive
+ - int, start yards to goal
+ - Play[], play list
+ - TimeSpan, time taken () 
+
+class Quarter
+ - int, period
+
+class Game
+ - Team, home team
+ - Team, away team
+ - Drive[], drive list
+
+```
+
+```
 using System;
 
 public class Play
@@ -52,5 +107,4 @@ public enum PlayType { Run, Pass, Punt, FieldGoal, Kickoff, Penalty, Sack, Kneel
 public enum PlayOutcome { Complete, Incomplete, Touchdown, Interception, Fumble, MadeFG, MissedFG, Sacked }
 
 ```
-
 

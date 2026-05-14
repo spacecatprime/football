@@ -1,9 +1,10 @@
 # football
 
-First remote check in
-Not seeing this
-This is the chrombook talking
+Developed in VSCode
+ - using .Net 9.0 SDK
+ - extension: .Net Install Tool
+ - extension: C#
+ - extension: C# Dev Kit
 
-git seems to work now 
-
-Just want to make sure I can access this
+Using native SDK frameworks such as:
+ - MSTest
